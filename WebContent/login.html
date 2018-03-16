@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>科大零食店</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <style>
+        body {
+            background: url("static/images/2.jpg") no-repeat fixed center;
+            font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+            text-align: center;
+            color: #fff;
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, .2)
+        }
+
+        form {
+            position: relative;
+            width: 305px;
+            margin: 15px auto 0px auto;
+
+        }
+
+        input {
+            width: 270px;
+            height: 42px;
+            line-height: 42px;
+            margin-top: 25px;
+            padding: 0 15px;
+            background: rgba(45, 45, 45, 0.15);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset;
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        }
+
+        input:focus {
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+        }
+        input::-webkit-input-placeholder {
+            color: #fff
+        }
+
+        input:-moz-placeholder {
+            color: #fff
+        }
+
+        input:-ms-input-placeholder {
+            color: #fff
+        }
+        button {
+            cursor: pointer;
+            width: 300px;
+            height: 44px;
+            margin-top: 25px;
+            padding: 0;
+            background: rgba(6, 127, 228, 0.7);
+            border-radius: 6px;
+            border: 0;
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        }
+
+        button:hover {
+            box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .15) inset, 0 2px 7px 0 rgba(0, 0, 0, .2)
+        }
+
+        .register-tis {
+            line-height: 42px;
+            margin: 15px auto 0px;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            background: rgba(45, 45, 45, 0.33);
+            border-radius: 6px;
+        }
+
+        .connect {
+            margin-top: 18px;
+            width: 100%;
+            font-size: 14px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+        }
+        .connect p{
+            font-size:20px;
+        }
+
+        .login-container {
+            margin: 8% auto 0 auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="login-container" id="app">
+        <h1>科大零食店</h1>
+
+        <div class="connect">
+            <p>欢迎登陆</p>
+        </div>
+			<form>
+            <div>
+                <input  type="text" name="username" class="username" placeholder="用户名" v-model="username" />
+            </div>
+            <div>
+                <input  type="password" name="password" class="password" placeholder="密码" v-model="password"/>
+            </div>
+            <button id="submit" type="button" v-on:click="validate">登 录</button>
+    
+
+        <a href="register.html">
+            <button type="button" class="register-tis">还有没有账号？</button>
+        </a>
+        </form>
+    </div>
+</body>
+<script>
+	var app = new Vue({
+		el:'#app',
+		data:{
+			username:'',
+			password:''
+			
+		},
+		methods:{
+			validate:function(){
+			
+				var user={username:this.username,password:this.password};
+				$.get("/shixun/LoginServlet",user,function(data){
+						alert(data.return_info);
+				},"json");
+			}
+		}
+	})
+</script>
+</html>

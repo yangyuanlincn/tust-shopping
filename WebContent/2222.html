@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="static/js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		a:link {
+			color: #7A7A7A;
+			<b>
+		}
+
+		a:visited {
+			color: #7A7A7A;
+			<b>
+		}
+
+		a:hover {
+			color: red;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		body {
+			font-family: "微软雅黑";
+		}
+
+		img.normal {
+			width: 200px;
+			height: 158px;
+
+		}
+
+		img.big {
+			width: 240px;
+			height: 270px;
+
+		}
+
+		#home {
+			width: 1548px;
+			height: 1950px;
+			background-color: blueviolet;
+		}
+
+		#all {
+			width: 1548px;
+			height: 1920px;
+			background-color: white;
+			float: left;
+		}
+
+		#first {
+			width: 1548px;
+			height: 45px;
+			background-color: #EBEBEB;
+		}
+
+		#second {
+			width: 1548px;
+			height: 150px;
+			background-color: white;
+		}
+
+		#third {
+			width: 1548px;
+			height: 40px;
+			background-color: white;
+		}
+
+		#fourth {
+			width: 1548px;
+			height: 1695px;
+			background-color: white;
+		}
+
+		#fifth {
+			width: 1548px;
+			height: 45px;
+			background-color: #EBEBEB;
+		}
+
+		#fifth li {
+			float: left;
+			color: #7A7A7A;
+			width: 140px;
+			margin-left: 50px;
+			text-align: center;
+			font-family: "微软雅黑";
+			font-size: 15px;
+			margin-top: 5px;
+		}
+
+		#p1 {
+			width: 490px;
+			height: 100px;
+			background-color: white;
+			float: left;
+		}
+
+		#p2 {
+			width: 1058px;
+			height: 130px;
+			background-color: white;
+			float: left;
+			margin-top: 20px;
+		}
+
+		#q1 {
+			width: 1058px;
+			height: 60px;
+			background-color: white;
+		}
+
+		#q2 {
+			width: 1058px;
+			height: 40px;
+			background-color: white;
+		}
+
+		#p4 {
+			width: 292px;
+			height: 1690px;
+			background-color: white;
+			float: left;
+			border-bottom: 3px solid whitesmoke;
+			border-left: 3px solid whitesmoke;
+			border-right: 9px solid whitesmoke;
+			border-top: 3px solid whitesmoke;
+		}
+
+		#p5 {
+			width: 1541px;
+			height: 1690px;
+			background-color: #EBEBEB;
+
+			border-bottom: 3px solid whitesmoke;
+			border-left: 3px solid whitesmoke;
+			border-right: 3px solid whitesmoke;
+			border-top: 3px solid whitesmoke;
+		}
+
+		#p5 div {
+			float: left;
+		}
+
+		#first li {
+			float: left;
+			color: #7A7A7A;
+			width: 140px;
+			margin-left: 50px;
+			text-align: center;
+			font-family: "微软雅黑";
+			font-size: 15px;
+			margin-top: 5px;
+		}
+
+		#p1 p {
+			color: deeppink;
+			margin-left: 120px;
+			text-align: center;
+			font-family: "宋体";
+			font-size: 45px;
+			margin-top: 50px;
+		}
+
+		#q1 input[type="text"] {
+			width: 700px;
+			height: 40px;
+			margin-left: 200px;
+			border-color: cornflowerblue;
+			border: 1px solid cornflowerblue;
+			margin-top: 10px;
+			border-radius: 5px;
+			font-size: 20px;
+		}
+
+		#q1 input[type="submit"] {
+
+			width: 100px;
+			height: 40px;
+			border-color: cornflowerblue;
+			border: 1px solid cornflowerblue;
+			background-color: cornflowerblue;
+			margin-top: 10px;
+			border-radius: 5px;
+			font-size: 20px;
+			color: white;
+		}
+
+		#q2 ul {
+			margin-left: 160px;
+
+		}
+
+		#q2 li {
+
+			float: left;
+			color: darkgray;
+			width: 80px;
+			margin-left: 20px;
+			text-align: center;
+			font-family: "微软雅黑";
+			font-size: 15px;
+			margin-top: 5px;
+
+		}
+
+		#p41 {
+			color: black;
+			margin-left: 10px;
+			text-align: center;
+			font-family: "宋体";
+			font-size: 25px;
+			margin-top: 20px;
+
+		}
+
+		.t1 {
+			margin-top: 20px;
+			margin-left: 50px;
+			width: 200px;
+			height: 250px;
+			background-color: white;
+		}
+
+		.t2 {
+			width: 200px;
+			height: 40px;
+			color: red;
+			background-color: white;
+
+		}
+
+		.t3 {
+			width: 200px;
+			height: 50px;
+			font-size: 15px;
+			background-color: white;
+		}
+
+		.t4 {
+			width: 240px;
+			height: 413px;
+			background-color: white;
+			border-bottom: 3px solid whitesmoke;
+			border-left: 3px solid whitesmoke;
+			border-right: 3px solid whitesmoke;
+			border-top: 3px solid whitesmoke;
+		}
+
+		.t4:hover a {
+			transform: scale(1.1);
+			transform: 0.1s;
+		}
+
+		.t5 {
+			width: 251px;
+			height: 30px;
+			color: red;
+			background-color: white;
+
+		}
+
+		.t6 {
+			width: 251px;
+			height: 68px;
+			color: red;
+			background-color: white;
+
+		}
+
+		.t6:hover a {
+			color: red;
+		}
+
+		.t7 {
+			width: 251px;
+			height: 40px;
+			color: deepskyblue;
+			background-color: white;
+			font-size: 15px;
+
+		}
+
+		#shopcar {
+			width: 40px;
+			height: 920px;
+			background-color: black;
+			position: fixed;
+			right: 0px;
+			top: 0px;
+
+		}
+
+		#shopcar :a {
+			color: white;
+
+		}
+
+		#scar {
+			margin-top: 200px;
+			width: 40;
+			height: 200;
+			background-color: black;
+			font-size: 16px;
+			text-align: center;
+			color: white;
+		}
+
+		#scar:hover {
+			background-color: orange;
+		}
+
+		#sstar {
+			margin-top: 10px;
+			width: 40;
+			height: 200;
+			background-color: black;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		#sstar:hover {
+			background-color: orange;
+		}
+
+		#smtar {
+			margin-top: 10px;
+			width: 40;
+			height: 200;
+			background-color: black;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		#smtar:hover {
+			background-color: orange;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="shopcar">
+		<div id="scar">
+			<p>
+				Д
+			</p>
+			<p>购</p>
+			<p>物</p>
+			<p>车</p>
+		</div>
+		<div id="sstar">
+			<p>☆</p>
+		</div>
+		<div id="smtar">
+			<p>☏</p>
+		</div>
+
+	</div>
+	<div id="home" class="app">
+
+		<div id="all">
+
+			<div id="first">
+				<ul>
+					<li>欢迎来到科大优品!</li>
+					<li>
+						<a href="">请登录</a>
+					</li>
+					<li>
+						<a href="">注册有礼</a>
+					</li>
+					<li>
+						<a href="">我的订单</a>
+					</li>
+					<li>
+						<a href="">购物车</a>
+					</li>
+					<li>
+						<a href="">手机苏宁</a>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="second">
+				<div id="p1">
+					<p>
+						<b>科大
+							<span style="color: black;">优品</span>
+						</b>
+					</p>
+
+
+				</div>
+				<div id="p2">
+					<div id="q1">
+						<input type="text" name="productname" placeholder="请输入要查找的零食名称" />
+						<input type="submit" value="搜索" />
+					</div>
+					<div id="q2">
+						<ul>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E8%9B%8B%E7%B3%95">蛋糕</a>
+							</li>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E9%9D%A2%E5%8C%85">面包</a>
+							</li>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E6%B8%AF%E8%8D%A3%E8%92%B8%E8%9B%8B%E7%B3%95">港荣蒸蛋糕</a>
+							</li>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E8%BE%BE%E5%88%A9%E5%9B%AD%E8%9B%8B%E7%B3%95">达利园蛋糕</a>
+							</li>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E4%BC%91%E9%97%B2%E9%9B%B6%E9%A3%9F">休闲零食</a>
+							</li>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E5%8C%85%E9%82%AE%E9%9B%B6%E9%A3%9F">包邮零食</a>
+							</li>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E9%9B%B6%E9%A3%9F%E8%87%AA%E8%90%A5">零食自营</a>
+							</li>
+							<li>
+								<a href=" http://re.suning.com/keyword.htm?q=%E8%8B%8F%E6%89%93%E9%A5%BC%E5%B9%B2">苏打饼干</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+
+
+			<div id="third">
+				<marquee>
+					<span style="color: pink; font=size:35px;">从即日起至2018/4/15，凡进入小可优品购物的顾客，均可享受9折优惠！！！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 更多优惠，尽在小可优品
+					</span>
+				</marquee>
+			</div>
+
+
+			<div id="fourth">
+				<div id="p4">
+					<p id="p41">猜你喜欢</p>
+
+					<div class="t1">
+						<div>
+							<a href="">
+								<img class="normal" src="img/7.jpg">
+						</div>
+						<div class="t2">
+							<b>¥1000</b>
+						</div>
+						<div class="t3">你嫌便宜的话</div>
+					</div>
+					<div class="t1">
+						<div>
+							<a href="">
+								<img class="normal" src="img/7.jpg">
+						</div>
+						<div class="t2">
+							<b>¥1000</b>
+						</div>
+						<div class="t3">你嫌便宜的话</div>
+					</div>
+					<div class="t1">
+						<div>
+							<a href="">
+								<img class="normal" src="img/7.jpg">
+						</div>
+						<div class="t2">
+							<b>¥1000</b>
+						</div>
+						<div class="t3">你嫌便宜的话</div>
+					</div>
+					<div class="t1">
+						<div>
+							<a href="">
+								<img class="normal" src="img/7.jpg">
+						</div>
+						<div class="t2">
+							<b>¥1000</b>
+						</div>
+						<div class="t3">你嫌便宜的话</div>
+					</div>
+					<div class="t1">
+						<div>
+							<a href="">
+								<img class="normal" src="img/7.jpg">
+						</div>
+						<div class="t2">
+							<b>¥1000</b>
+						</div>
+						<div class="t3">你嫌便宜的话</div>
+					</div>
+					<div class="t1">
+						<div>
+							<a href="">
+								<img class="normal" src="img/7.jpg">
+						</div>
+						<div class="t2">
+							<b>¥1000</b>
+						</div>
+						<div class="t3">你嫌便宜的话</div>
+					</div>
+
+
+
+				</div>
+				<div id="p5">
+					<div class="t4" v-for="list in lists">
+						<div>
+							<a href="">
+								<img class="big" :src=list.food_image>
+							</a>
+						</div>
+						<div class="t5">
+							<b>{{list.food_price}}</b>
+						</div>
+						<div class="t6">
+							<a v-bind:href="">{{list.food_name}}</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+					<div class="t4">
+						<div>
+							<a href="">
+								<img class="big" src="img/7.jpg">
+							</a>
+						</div>
+						<div class="t5">
+							<b>¥1000</b>
+						</div>
+						<div class="t6">
+							<a href="">你嫌便宜,建立规范施工结束了发动机饿鹅鹅鹅鹅鹅鹅饿</a>
+						</div>
+						<div class="t7">好评率：88%</div>
+					</div>
+
+
+				</div>
+				<div style="clear:both"></div>
+			</div>
+
+
+			<div id="fifth">
+				<ul>
+					<li>
+						<a href="">正品保障</a>
+					</li>
+					<li>
+						<a href="">急速物流</a>
+					</li>
+					<li>
+						<a href="">售后无忧</a>
+					</li>
+					<li>
+						<a href="">特色服务</a>
+					</li>
+					<li>
+						<a href="">帮助中心</a>
+					</li>
+					<li>
+						<a href="">购物指南</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	</div>
+</body>
+</html>

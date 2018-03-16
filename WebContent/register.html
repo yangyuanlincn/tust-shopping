@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>科大零食店</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="static/js/jquery-3.3.1.min.js"></script>
+    <style>
+        body {
+            background: url("static/images/1.jpg") no-repeat fixed center;
+            font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+            text-align: center;
+            color: #fff;
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, .2)
+        }
+
+        form {
+            position: relative;
+            width: 305px;
+            margin: 15px auto 0px auto;
+
+        }
+
+        input {
+            width: 270px;
+            height: 42px;
+            line-height: 42px;
+            margin-top: 25px;
+            padding: 0 15px;
+            background: rgba(45, 45, 45, 0.15);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset;
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        }
+
+        input:focus {
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+        }
+
+        button {
+            cursor: pointer;
+            width: 300px;
+            height: 44px;
+            margin-top: 25px;
+            padding: 0;
+            background: rgba(6, 127, 228, 0.7);
+            border-radius: 6px;
+            border: 0;
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        }
+
+        input::-webkit-input-placeholder {
+            color: #fff
+        }
+
+        input:-moz-placeholder {
+            color: #fff
+        }
+
+        input:-ms-input-placeholder {
+            color: #fff
+        }
+
+        button:hover {
+            box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .15) inset, 0 2px 7px 0 rgba(0, 0, 0, .2)
+        }
+
+        .register-tis {
+            line-height: 42px;
+            margin: 15px auto 0px;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            background: rgba(45, 45, 45, 0.33);
+            border-radius: 6px;
+        }
+
+        .connect {
+            margin-top: 18px;
+            width: 100%;
+            font-size: 14px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+        }
+
+        .connect p {
+            font-size: 20px;
+        }
+
+        .register-container {
+            margin: 6% auto 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container" id="app">
+        <h1>科大零食店</h1>
+
+        <div class="connect">
+            <p>欢迎注册</p>
+        </div>
+
+        <form id="registerForm">
+            <div>
+                <input type="text" name="username" class="username" placeholder="您的用户名"  v-model="username"/>
+            </div>
+            <div>
+                <input type="password" name="password" class="password" placeholder="输入密码" v-model="password"/>
+            </div>
+            <div>
+                <input type="password" name="confirm_password" class="confirm_password" placeholder="再次输入密码" v-model="confirm_password"/>
+            </div>
+            <div>
+                <input type="text" name="phone_number" class="phone_number" placeholder="输入手机号码"  id="number" v-model="phone"/>
+            </div>
+            <div>
+                <input type="email" name="email" class="email" placeholder="输入邮箱地址" v-model="email"/>
+            </div>
+
+            <button id="submit" type="button" v-on:click="validate">注 册</button>
+        </form>
+        <a href="index.html">
+            <button type="button" class="register-tis">已经有账号？</button>
+        </a>
+    </div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			username:'',
+			password:'',
+			phone:'',
+			email:''
+		},
+		methods:{
+			validate:function(){
+				var user={username:this.username,password:this.password,phone:this.phone,email:this.email};
+				$.get("/shixun/RegisterServlet",user,function(data){
+						alert(data.return_info);
+				},"json");
+			}
+		}
+	});
+</script>
+</html>
